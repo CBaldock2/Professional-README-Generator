@@ -40,7 +40,7 @@ function renderLicenseSection(license) {
 
   if (license != 'None') {
     licenseSelect += '##License/n'
-    licenseSelect += `Please see ${renderLicenseSection} to get detailed information for this license/n`
+    licenseSelect += `Please see ${renderLicenseLink} to get detailed information for this license/n`
   }
 }
 
@@ -48,8 +48,7 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ## Licensing
-  ${data.license}
+  ${renderLicenseBadge}
 
   ## Table of Contents
     - Description(#Description)
@@ -70,7 +69,7 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  ${data.license}
+  [${data.license}](${renderLicenseSection})
 
   ## Contributions
   ${data.contributing}
