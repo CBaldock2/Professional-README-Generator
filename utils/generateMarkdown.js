@@ -5,7 +5,7 @@ function renderLicenseBadge(license) {
     return '';
   }
 
-  return `[![License](https://img.shields.io/badge/License-${encodeURIComponent(license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(license)})`;
+  return `[![License](https://img.shields.io/badge/License-${encodeURIComponent(license)}-blue.svg)](https://opensource.org/licenses/${encodeURIComponent(license)})`;
 
 }
 
@@ -14,7 +14,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   let licenseLink;
 
-  switch(license) {
+  switch (license) {
     case 'MIT':
       licenseLink = 'https://mit-license.org/';
       break;
@@ -31,6 +31,7 @@ function renderLicenseLink(license) {
       licenseLink = '';
       break;
   }
+  return licenseLink;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -39,47 +40,56 @@ function renderLicenseSection(license) {
   let licenseSelect = ''
 
   if (license != 'None') {
-    licenseSelect += '##License/n'
-    licenseSelect += `Please see ${renderLicenseLink} to get detailed information for this license/n`
+    licenseSelect += '##License\n'
+    licenseSelect += `Please see ${renderLicenseLink(license)} to get detailed information for this license\n`
   }
+  return licenseSelect;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ${renderLicenseBadge}
+  ${renderLicenseBadge(data.license)}
 
   ## Table of Contents
-    - Description(#Description)
-    - Installation(#Installation)
-    - Usage(#Usage)
-    - Contributions(#Contributions)
-    - Testing(#Tests)
-    - [Questions](#Questions)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributions](#contributions)
+  - [Testing](#tests)
+  - [Questions](#questions)
 
   
   ## Description
+  <a name= 'description'></a>
   ${data.description}
 
   ## Installation
+  <a name= 'installation'></a>
   ${data.installation}
 
   ## Usage
+  <a name= 'usage'></a>
   ${data.usage}
 
   ## License
-  [${data.license}](${renderLicenseSection})
+  <a name= 'license'></a>
+  [${data.license}](${renderLicenseLink(data.license)})
 
   ## Contributions
+  <a name= 'contributions'></a>
   ${data.contributing}
 
   ## Testing
+  <a name= 'tests'></a>
   ${data.tests}
 
   ## Questions
-  - GitHub: [${data.github}](https://github.com/${data.github})
-  - Email: ${data.email}
+  <a name= 'questions'></a>
+  - If you have any other questions, you can email me at: ${data.email}
+  - You can also find me [here](https://github.com/${data.github})
 `;
 }
 
