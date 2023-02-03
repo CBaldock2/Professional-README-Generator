@@ -37,14 +37,6 @@ const questions = [
             }
         }
     },
-    // Table of Contents
-    {
-        type: 'input',
-        message: 'Table of Contents',
-        name: 'table of contents',
-        // Validates the input
-        validate: (value) => { if (value) { return true } else { return 'You need a table of contents' } }
-    },
     // Installaion
     {
         type: 'input',
@@ -63,10 +55,10 @@ const questions = [
     },
     // License
     {
-        type: 'input',
+        type: 'list',
         message: 'What license does this project have?',
         name: 'license',
-        choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
+        choices: ['MIT', 'BSD', 'MPL', 'Apache 2.0'],
         // Validates the input
         validate: (value) => { if (value) { return true } else { return 'You need a License' } }
     },
