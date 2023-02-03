@@ -14,29 +14,32 @@
   
   ## Description
   <a name= 'description'></a>
-  ojf
+  This project can help save time by creating a readme leaving more time for you to code
 
   ## Installation
   <a name= 'installation'></a>
-  asv
+  This project requires you to use "npm i inquirer"
 
   ## Usage
   <a name= 'usage'></a>
-  vafva
+  By answering each question that appear for you to answer
 
   ## License
   <a name= 'license'></a>
   [MIT](https://mit-license.org/)
 
+  ## Video 
+  ![a gif of Chris Baldock running the index questions](./Assest/Video/Untitled%20video%20-%20Made%20with%20Clipchamp.gif)
+
   ## Contributions
   <a name= 'contributions'></a>
-  afbabyh
+  n/a
 
   ## Testing
   <a name= 'tests'></a>
-  vsgn
+  n/a
 
   ## Questions
   <a name= 'questions'></a>
-  - If you have any other questions, you can email me at: ggg
-  - You can also find me [here](https://github.com/asrg)
+  - If you have any other questions, you can email me at: someOne@gmail.com
+  - You can also find me [here](https://github.com/cbaldock2)
